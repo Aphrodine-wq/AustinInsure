@@ -32,10 +32,11 @@
     <section class="hero" aria-label="Hero">
       <div class="hero-bg" role="img" aria-hidden="true"></div>
       <div class="container hero-inner">
+        <p class="hero-eyebrow">Trusted in Central Texas</p>
         <h1 class="hero-title">Austin-Area Homeowners — File Your Insurance Claim With Confidence</h1>
         <p class="hero-subtitle">Licensed & insured Texas contractor. We handle roof, storm, water, and fire damage claims from start to finish — so you get a fair settlement and a quality repair.</p>
         <div class="hero-ctas">
-          <a href="#form" class="btn btn-primary">Get Your Free Claim Assessment</a>
+          <button type="button" class="btn btn-primary" id="open-intake-modal" aria-haspopup="dialog" aria-expanded="false">Get Your Free Claim Assessment</button>
           <a href="tel:+15125551234" class="btn btn-secondary">Or Call (512) 555-1234</a>
         </div>
       </div>
@@ -126,7 +127,7 @@
           </li>
         </ol>
         <div class="expect-cta">
-          <a href="#form" class="btn btn-primary">Get Your Free Assessment</a>
+          <button type="button" class="btn btn-primary" id="open-intake-modal-expect">Get Your Free Assessment</button>
         </div>
         <div class="work-gallery" aria-label="Project photos">
           <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="House exterior with roof" width="600" height="400" loading="lazy" />
@@ -184,7 +185,7 @@
     <section class="testimonials">
       <div class="container">
         <h2 class="section-title">What Homeowners Say</h2>
-        <p class="section-intro">Replace these with real reviews from Google, Facebook, or your own clients.</p>
+        <p class="section-intro">Trusted by Austin-area families for insurance claim support and quality repairs.</p>
         <div class="testimonial-grid">
           <blockquote class="testimonial-card">
             <p>“They handled everything with our insurance and the roof was done right. No runaround.”</p>
@@ -233,6 +234,9 @@
         <h2 class="section-title">Get Your Free Claim Assessment</h2>
         <p class="form-intro">Tell us about your damage and we’ll get back to you within 24 hours. No obligation — we’ll inspect your property for free and help you understand your options before you commit to anything.</p>
 
+        <p class="form-intro form-intro-cta">
+          <button type="button" class="btn btn-primary btn-open-modal" data-open-intake>Open detailed intake form</button>
+        </p>
         <form id="lead-form" class="lead-form" action="#" method="post">
           <div class="form-row">
             <label for="name">Full name <span class="required">*</span></label>
@@ -279,12 +283,262 @@
     </section>
   </main>
 
+  <!-- Detailed intake modal (multi-step, sends to Zapier → construction owner) -->
+  <div id="intake-modal" class="intake-modal" role="dialog" aria-modal="true" aria-labelledby="intake-modal-title" aria-hidden="true">
+    <div class="intake-modal-backdrop" id="intake-modal-backdrop"></div>
+    <div class="intake-modal-dialog">
+      <div class="intake-modal-header">
+        <h2 id="intake-modal-title" class="intake-modal-title">Free Claim Assessment — Detailed Intake</h2>
+        <p class="intake-modal-subtitle">Your info is sent directly to our team. We'll reach out within 24 hours.</p>
+        <button type="button" class="intake-modal-close" id="intake-modal-close" aria-label="Close modal">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="intake-steps" aria-label="Form steps">
+        <ol class="intake-step-indicator" role="list">
+          <li class="intake-step-dot active" data-step="1" aria-current="step"><span>Contact</span></li>
+          <li class="intake-step-dot" data-step="2"><span>Property</span></li>
+          <li class="intake-step-dot" data-step="3"><span>Damage & Insurance</span></li>
+          <li class="intake-step-dot" data-step="4"><span>Details</span></li>
+        </ol>
+      </div>
+
+      <form id="intake-form" class="intake-form" novalidate>
+        <!-- Step 1: Contact -->
+        <div class="intake-panel active" data-panel="1">
+          <h3 class="intake-panel-title">Contact information</h3>
+          <div class="intake-fields">
+            <div class="form-row">
+              <label for="intake-name">Full legal name <span class="required">*</span></label>
+              <input type="text" id="intake-name" name="name" required placeholder="John Smith" />
+            </div>
+            <div class="form-row">
+              <label for="intake-phone">Phone <span class="required">*</span></label>
+              <input type="tel" id="intake-phone" name="phone" required placeholder="(512) 555-1234" />
+            </div>
+            <div class="form-row">
+              <label for="intake-email">Email <span class="required">*</span></label>
+              <input type="email" id="intake-email" name="email" required placeholder="john@example.com" />
+            </div>
+            <div class="form-row">
+              <label for="intake-contact-method">Preferred contact method</label>
+              <select id="intake-contact-method" name="contact_method">
+                <option value="">Any</option>
+                <option value="Phone">Phone</option>
+                <option value="Email">Email</option>
+                <option value="Text">Text</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="intake-best-time">Best time to call</label>
+              <select id="intake-best-time" name="best_time">
+                <option value="">Any time</option>
+                <option value="Morning">Morning (8am–12pm)</option>
+                <option value="Afternoon">Afternoon (12pm–5pm)</option>
+                <option value="Evening">Evening (5pm–8pm)</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="intake-alt-phone">Alternate phone</label>
+              <input type="tel" id="intake-alt-phone" name="alt_phone" placeholder="(512) 555-5678" />
+            </div>
+            <div class="form-row form-row-full">
+              <label for="intake-referral">How did you hear about us?</label>
+              <select id="intake-referral" name="referral_source">
+                <option value="">Select…</option>
+                <option value="Search">Google / search</option>
+                <option value="Referral">Friend or family referral</option>
+                <option value="Social">Social media</option>
+                <option value="Drive-by">Saw your work / sign</option>
+                <option value="Insurance">Insurance company referred</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Property -->
+        <div class="intake-panel" data-panel="2">
+          <h3 class="intake-panel-title">Property details</h3>
+          <div class="intake-fields">
+            <div class="form-row form-row-full">
+              <label for="intake-address">Street address <span class="required">*</span></label>
+              <input type="text" id="intake-address" name="address" required placeholder="123 Main St" />
+            </div>
+            <div class="form-row">
+              <label for="intake-city">City <span class="required">*</span></label>
+              <input type="text" id="intake-city" name="city" required placeholder="Austin" />
+            </div>
+            <div class="form-row">
+              <label for="intake-state">State</label>
+              <input type="text" id="intake-state" name="state" value="TX" placeholder="TX" maxlength="2" />
+            </div>
+            <div class="form-row">
+              <label for="intake-zip">ZIP code <span class="required">*</span></label>
+              <input type="text" id="intake-zip" name="zip" required placeholder="78701" pattern="[0-9]{5}(-[0-9]{4})?" />
+            </div>
+            <div class="form-row form-row-full">
+              <label for="intake-property-type">Property type</label>
+              <select id="intake-property-type" name="property_type">
+                <option value="">Select…</option>
+                <option value="Single Family">Single family home</option>
+                <option value="Townhouse">Townhouse</option>
+                <option value="Condo">Condo</option>
+                <option value="Multi-Family">Multi-family</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="intake-sqft">Square footage (approx)</label>
+              <input type="text" id="intake-sqft" name="sqft" placeholder="e.g. 2,400" inputmode="numeric" />
+            </div>
+            <div class="form-row">
+              <label for="intake-year-built">Year built (approx)</label>
+              <input type="text" id="intake-year-built" name="year_built" placeholder="e.g. 1995" maxlength="4" inputmode="numeric" />
+            </div>
+            <div class="form-row">
+              <label for="intake-stories">Number of stories</label>
+              <select id="intake-stories" name="stories">
+                <option value="">Select…</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3+</option>
+              </select>
+            </div>
+            <div class="form-row form-row-full">
+              <label for="intake-roof-type">Roof type</label>
+              <select id="intake-roof-type" name="roof_type">
+                <option value="">Select…</option>
+                <option value="Asphalt Shingle">Asphalt shingle</option>
+                <option value="Metal">Metal</option>
+                <option value="Tile">Tile</option>
+                <option value="Flat / Built-up">Flat / built-up</option>
+                <option value="Not sure">Not sure</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Damage & Insurance -->
+        <div class="intake-panel" data-panel="3">
+          <h3 class="intake-panel-title">Damage & insurance</h3>
+          <div class="intake-fields">
+            <div class="form-row form-row-full">
+              <label for="intake-damage-type">Type of damage <span class="required">*</span></label>
+              <select id="intake-damage-type" name="damage_type" required>
+                <option value="">Select one…</option>
+                <option value="Roof & Hail">Roof & Hail</option>
+                <option value="Water & Leaks">Water & Leaks</option>
+                <option value="Storm & Wind">Storm & Wind</option>
+                <option value="Fire & Smoke">Fire & Smoke</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="intake-date-of-loss">Date of loss (approximate)</label>
+              <input type="date" id="intake-date-of-loss" name="date_of_loss" />
+            </div>
+            <div class="form-row">
+              <label for="intake-insurance-carrier">Insurance carrier</label>
+              <input type="text" id="intake-insurance-carrier" name="insurance_carrier" placeholder="e.g. State Farm, Allstate" />
+            </div>
+            <div class="form-row">
+              <label for="intake-claim-number">Claim number (if already filed)</label>
+              <input type="text" id="intake-claim-number" name="claim_number" placeholder="Optional" />
+            </div>
+            <div class="form-row form-row-full">
+              <label for="intake-policy-holder">Policy holder name</label>
+              <input type="text" id="intake-policy-holder" name="policy_holder" placeholder="Name on the insurance policy" />
+            </div>
+            <div class="form-row">
+              <label for="intake-claim-filed">Claim already filed?</label>
+              <select id="intake-claim-filed" name="claim_filed">
+                <option value="">Select…</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="In progress">In progress</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="intake-policy-number">Policy number</label>
+              <input type="text" id="intake-policy-number" name="policy_number" placeholder="Optional" />
+            </div>
+            <div class="form-row">
+              <label for="intake-deductible">Deductible amount (if known)</label>
+              <input type="text" id="intake-deductible" name="deductible" placeholder="e.g. 1% or $1,000" />
+            </div>
+            <div class="form-row form-row-full">
+              <label for="intake-adjuster">Adjuster visit</label>
+              <select id="intake-adjuster" name="adjuster_status">
+                <option value="">Select…</option>
+                <option value="Not yet">Not yet scheduled</option>
+                <option value="Scheduled">Scheduled</option>
+                <option value="Already visited">Already visited</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Details -->
+        <div class="intake-panel" data-panel="4">
+          <h3 class="intake-panel-title">Additional details</h3>
+          <div class="intake-fields">
+            <div class="form-row form-row-full">
+              <label for="intake-description">Description of damage <span class="required">*</span></label>
+              <textarea id="intake-description" name="description" required rows="4" placeholder="When did it happen? What do you see (e.g. missing shingles, water stains, smell)? Have you filed a claim yet? Any adjuster already visit?"></textarea>
+            </div>
+            <div class="form-row form-row-full">
+              <label for="intake-urgency">How urgent is this?</label>
+              <select id="intake-urgency" name="urgency">
+                <option value="">Select…</option>
+                <option value="Emergency">Emergency — active leak / safety issue</option>
+                <option value="Soon">Soon — need repair in next few weeks</option>
+                <option value="Planning">Planning — gathering quotes / info</option>
+              </select>
+            </div>
+            <div class="form-row form-row-full">
+              <label for="intake-temp-repairs">Temporary repairs done?</label>
+              <select id="intake-temp-repairs" name="temp_repairs">
+                <option value="">Select…</option>
+                <option value="No">No</option>
+                <option value="Yes - tarp">Yes — tarp / cover</option>
+                <option value="Yes - other">Yes — other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="intake-pref-date">Preferred inspection date</label>
+              <input type="date" id="intake-pref-date" name="preferred_inspection_date" />
+            </div>
+            <div class="form-row form-row-full">
+              <label for="intake-photos-note">Photos</label>
+              <input type="text" id="intake-photos-note" name="photos_note" placeholder="e.g. I can email photos, or we’ll take at inspection" />
+            </div>
+            <div class="form-row form-row-full">
+              <label for="intake-notes">Any other notes for our team</label>
+              <textarea id="intake-notes" name="notes" rows="3" placeholder="Access instructions, gate code, pets, preferred start date, etc."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="intake-form-actions">
+          <button type="button" class="btn btn-secondary intake-back" id="intake-back" disabled>Back</button>
+          <button type="button" class="btn btn-primary intake-next" id="intake-next">Next</button>
+          <button type="submit" class="btn btn-primary intake-submit" id="intake-submit" style="display: none;">Send to Our Team — Get My Free Assessment</button>
+        </div>
+        <div id="intake-message" class="form-message" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-brand">EC Design & Build</p>
-      <p class="footer-tagline">Licensed Texas contractor — roof, storm, water & fire damage claims and repair.</p>
+      <p class="footer-brand">Austin Insure</p>
+      <p class="footer-tagline">Licensed & bonded. Roof, storm, water, and fire damage claims and repair across Central Texas.</p>
       <p class="footer-contact"><a href="tel:+15125551234">(512) 555-1234</a> · Austin & greater Central Texas</p>
-      <p class="footer-copy">© <span id="year"></span> EC Design & Build. All rights reserved.</p>
+      <p class="footer-copy">© <span id="year"></span> Austin Insure. All rights reserved.</p>
     </div>
   </footer>
 
