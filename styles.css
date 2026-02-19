@@ -1,0 +1,342 @@
+/* Austin Insurance Claims — Landing page */
+:root {
+  --color-bg: #f8f7f4;
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5a5a5a;
+  --color-accent: #c45c26;
+  --color-accent-hover: #a04a1e;
+  --color-border: #e0ddd8;
+  --color-success: #1a7f37;
+  --color-error: #b91c1c;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --radius: 8px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --container: min(100% - 2rem, 720px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.container {
+  width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+/* Header */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-sm) 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.header-cta {
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.header-cta:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
+}
+
+.hero-inner {
+  text-align: center;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 var(--space-md);
+  color: var(--color-text);
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-lg);
+  max-width: 42ch;
+  margin-inline: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Trust */
+.trust {
+  padding: var(--space-xl) 0;
+}
+
+.trust-inner {
+  text-align: center;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.badge-icon {
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.trust-note {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* What to Expect */
+.expect {
+  padding: var(--space-xl) 0;
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-lg);
+  text-align: center;
+}
+
+.expect-steps {
+  margin: 0 0 var(--space-lg);
+  padding-left: 1.25rem;
+  max-width: 38rem;
+  margin-inline: auto;
+}
+
+.expect-steps li {
+  margin-bottom: var(--space-sm);
+}
+
+.expect-steps strong {
+  color: var(--color-text);
+}
+
+.photos-placeholder {
+  margin-top: var(--space-xl);
+  padding: var(--space-xl);
+  background: var(--color-bg);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Form */
+.form-section {
+  padding: var(--space-2xl) 0;
+}
+
+.form-inner {
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.form-intro {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-lg);
+  text-align: center;
+}
+
+.lead-form {
+  background: var(--color-surface);
+  padding: var(--space-lg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+}
+
+.form-row {
+  margin-bottom: var(--space-md);
+}
+
+.form-row-full {
+  grid-column: 1 / -1;
+}
+
+.lead-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+  font-size: 0.9rem;
+}
+
+.required {
+  color: var(--color-error);
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(196, 92, 38, 0.15);
+}
+
+.lead-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-actions {
+  margin-top: var(--space-lg);
+}
+
+.form-actions .btn {
+  width: 100%;
+  padding: var(--space-md);
+  font-size: 1.05rem;
+}
+
+.form-message {
+  margin-top: var(--space-md);
+  padding: var(--space-sm);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  display: none;
+}
+
+.form-message.visible {
+  display: block;
+}
+
+.form-message.success {
+  background: rgba(26, 127, 55, 0.1);
+  color: var(--color-success);
+  border: 1px solid rgba(26, 127, 55, 0.3);
+}
+
+.form-message.error {
+  background: rgba(185, 28, 28, 0.08);
+  color: var(--color-error);
+  border: 1px solid rgba(185, 28, 28, 0.2);
+}
+
+/* Footer */
+.site-footer {
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .lead-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 var(--space-lg);
+  }
+
+  .form-row-full {
+    margin-bottom: var(--space-md);
+  }
+}

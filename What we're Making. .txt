@@ -1,0 +1,23 @@
+Phase 1 — Build the Site (Today)
+
+Create a high-converting landing page with:
+
+Hero section: "Austin-Area Homeowners — File Your Insurance Claim With Confidence" + strong CTA
+Trust signals: licensed/insured badges, Texas contractor info, before/after photos
+Lead intake form capturing: name, phone, email, address, type of damage (roof, water, storm, fire, etc.), insurance carrier, and a brief description
+Simple "What to Expect" section to reduce friction
+Phase 2 — Wire Up Lead Delivery (Same Day)
+
+Two fast options to get leads to him instantly:
+
+Formspree or EmailJS — form submissions go straight to his email/SMS, zero backend needed
+Zapier — connect the form to a Google Sheet and send him a text via Twilio every time someone submits
+Phase 3 — Deploy (Same Day)
+
+Host on Netlify (free, instant deployment, custom domain support)
+Point a domain like ecdesignbuilds.com or austininsuranceclaims.com to it
+Phase 4 — Drive Traffic (Week 1)
+
+Set up a Google Business Profile if he doesn't have one (huge for local SEO)
+Run a small Google Ads campaign targeting "roof damage claim Austin" / "storm damage contractor Austin"
+Add the site link to his existing social profiles

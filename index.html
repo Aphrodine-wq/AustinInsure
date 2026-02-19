@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Austin-Area Homeowners — File Your Insurance Claim With Confidence</title>
+  <meta name="description" content="Licensed Texas contractor helping Austin-area homeowners with roof, storm, water, and fire damage insurance claims." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">EC Design & Build</a>
+      <a href="tel:+15125551234" class="header-cta">Call (512) 555-1234</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 class="hero-title">Austin-Area Homeowners — File Your Insurance Claim With Confidence</h1>
+        <p class="hero-subtitle">Licensed & insured Texas contractor. We handle roof, storm, water, and fire damage claims from start to finish — so you get a fair settlement and a quality repair.</p>
+        <a href="#form" class="btn btn-primary">Get Your Free Claim Assessment</a>
+      </div>
+    </section>
+
+    <!-- Trust signals -->
+    <section class="trust" aria-label="Trust signals">
+      <div class="container trust-inner">
+        <div class="badges">
+          <div class="badge">
+            <span class="badge-icon" aria-hidden="true">✓</span>
+            <span>Licensed Texas Contractor</span>
+          </div>
+          <div class="badge">
+            <span class="badge-icon" aria-hidden="true">✓</span>
+            <span>Fully Insured</span>
+          </div>
+          <div class="badge">
+            <span class="badge-icon" aria-hidden="true">✓</span>
+            <span>Serving Austin & Surrounding Areas</span>
+          </div>
+        </div>
+        <p class="trust-note">We work directly with your insurance company so you don’t have to fight for a fair claim alone.</p>
+      </div>
+    </section>
+
+    <!-- Before/After placeholder + What to Expect -->
+    <section class="expect">
+      <div class="container expect-inner">
+        <h2 class="section-title">What to Expect</h2>
+        <ol class="expect-steps">
+          <li>
+            <strong>Submit your info</strong> — Tell us about your damage and insurance. No obligation.
+          </li>
+          <li>
+            <strong>Free inspection</strong> — We’ll assess your property and document everything for your claim.
+          </li>
+          <li>
+            <strong>We handle the paperwork</strong> — We work with your carrier so you get a fair settlement.
+          </li>
+          <li>
+            <strong>Quality repair</strong> — Licensed crews complete the work to code and on time.
+          </li>
+        </ol>
+        <div class="photos-placeholder" aria-hidden="true">
+          <p>Before / After photos — add your own images here</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead form -->
+    <section id="form" class="form-section">
+      <div class="container form-inner">
+        <h2 class="section-title">Get Your Free Claim Assessment</h2>
+        <p class="form-intro">Fill out the form below and we’ll contact you within 24 hours.</p>
+
+        <form id="lead-form" class="lead-form" action="#" method="post">
+          <div class="form-row">
+            <label for="name">Full name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="John Smith" />
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" required placeholder="(512) 555-1234" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com" />
+          </div>
+          <div class="form-row">
+            <label for="address">Property address <span class="required">*</span></label>
+            <input type="text" id="address" name="address" required placeholder="123 Main St, Austin, TX" />
+          </div>
+          <div class="form-row">
+            <label for="damage_type">Type of damage <span class="required">*</span></label>
+            <select id="damage_type" name="damage_type" required>
+              <option value="">Select one…</option>
+              <option value="Roof">Roof</option>
+              <option value="Water">Water</option>
+              <option value="Storm">Storm</option>
+              <option value="Fire">Fire</option>
+              <option value="Hail">Hail</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="insurance_carrier">Insurance carrier</label>
+            <input type="text" id="insurance_carrier" name="insurance_carrier" placeholder="e.g. State Farm, Allstate" />
+          </div>
+          <div class="form-row form-row-full">
+            <label for="description">Brief description of damage</label>
+            <textarea id="description" name="description" rows="4" placeholder="When did it happen? What do you see? Any claim already filed?"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submit-btn">Submit — Get My Free Assessment</button>
+          </div>
+          <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> EC Design & Build. Serving Austin and the greater Central Texas area.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
