@@ -13,14 +13,15 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#" class="logo">EC Design & Build</a>
+      <a href="#" class="logo">Austin Insure</a>
       <a href="tel:+15125551234" class="header-cta">Call (512) 555-1234</a>
     </div>
   </header>
 
   <main>
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-bg" role="img" aria-hidden="true"></div>
       <div class="container hero-inner">
         <h1 class="hero-title">Austin-Area Homeowners — File Your Insurance Claim With Confidence</h1>
         <p class="hero-subtitle">Licensed & insured Texas contractor. We handle roof, storm, water, and fire damage claims from start to finish — so you get a fair settlement and a quality repair.</p>
@@ -36,15 +37,15 @@
       <div class="container trust-inner">
         <div class="badges">
           <div class="badge">
-            <span class="badge-icon" aria-hidden="true">✓</span>
+            <i class="badge-icon" data-lucide="check" aria-hidden="true"></i>
             <span>Licensed Texas Contractor</span>
           </div>
           <div class="badge">
-            <span class="badge-icon" aria-hidden="true">✓</span>
+            <i class="badge-icon" data-lucide="check" aria-hidden="true"></i>
             <span>Fully Insured</span>
           </div>
           <div class="badge">
-            <span class="badge-icon" aria-hidden="true">✓</span>
+            <i class="badge-icon" data-lucide="check" aria-hidden="true"></i>
             <span>Serving Austin & Surrounding Areas</span>
           </div>
         </div>
@@ -54,10 +55,15 @@
 
     <!-- Problem / Why it matters -->
     <section class="problem-section">
-      <div class="container container-narrow">
-        <h2 class="section-title">Most Homeowners Leave Money on the Table</h2>
+      <div class="container problem-inner">
+        <div class="problem-content">
+          <h2 class="section-title">Most Homeowners Leave Money on the Table</h2>
         <p class="problem-lead">After storm damage, hail, or a leak, many people get a lowball estimate, miss hidden damage, or don’t know how to push back on their insurance company. The result? You pay out of pocket for repairs that should be covered — or live with damage that gets worse.</p>
         <p class="problem-close">We’re here to make sure your claim is documented correctly, your carrier pays what they should, and the repair is done right. No stress, no guesswork.</p>
+        </div>
+        <div class="problem-image">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=560&q=80" alt="Roof inspection and damage assessment" width="560" height="360" loading="lazy" />
+        </div>
       </div>
     </section>
 
@@ -68,22 +74,22 @@
         <p class="section-intro">Roof, water, storm, fire — we inspect, document, and repair so your claim and your property are both in good hands.</p>
         <ul class="damage-grid" role="list">
           <li class="damage-card">
-            <span class="damage-icon" aria-hidden="true">🛡️</span>
+            <i class="damage-icon" data-lucide="shield" aria-hidden="true"></i>
             <h3>Roof & Hail</h3>
             <p>Missing shingles, granule loss, soft spots, and storm-related roof damage. We document it for your adjuster and replace or repair to code.</p>
           </li>
           <li class="damage-card">
-            <span class="damage-icon" aria-hidden="true">💧</span>
+            <i class="damage-icon" data-lucide="droplets" aria-hidden="true"></i>
             <h3>Water & Leaks</h3>
             <p>Leaks from storms, plumbing, or appliances. We find the source, assess affected areas, and work with your carrier on mitigation and repair.</p>
           </li>
           <li class="damage-card">
-            <span class="damage-icon" aria-hidden="true">⛈️</span>
+            <i class="damage-icon" data-lucide="cloud-lightning" aria-hidden="true"></i>
             <h3>Storm & Wind</h3>
             <p>Wind damage to roof, siding, and structures. We provide the documentation insurers need so you get a fair settlement.</p>
           </li>
           <li class="damage-card">
-            <span class="damage-icon" aria-hidden="true">🔥</span>
+            <i class="damage-icon" data-lucide="flame" aria-hidden="true"></i>
             <h3>Fire & Smoke</h3>
             <p>Fire, smoke, and soot damage. We help you navigate the claim and coordinate restoration so your home is safe and sound again.</p>
           </li>
@@ -113,8 +119,10 @@
         <div class="expect-cta">
           <a href="#form" class="btn btn-primary">Get Your Free Assessment</a>
         </div>
-        <div class="photos-placeholder" aria-hidden="true">
-          <p>Before / After gallery — add your own project photos here</p>
+        <div class="work-gallery" aria-label="Project photos">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="House exterior with roof" width="600" height="400" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1632778144955-d4e90bb2d2c9?w=600&q=80" alt="Roof and construction" width="600" height="400" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt="Home repair and restoration" width="600" height="400" loading="lazy" />
         </div>
       </div>
     </section>
@@ -271,6 +279,7 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

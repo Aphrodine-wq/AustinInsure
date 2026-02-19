@@ -61,4 +61,6 @@
       setSubmitting(false);
     }
   });
+
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 })();
