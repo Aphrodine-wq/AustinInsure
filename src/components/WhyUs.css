@@ -1,0 +1,55 @@
+.why-us {
+    position: relative;
+    z-index: 10;
+}
+
+.why-grid {
+    margin-top: 4rem;
+}
+
+.why-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    height: 100%;
+}
+
+.why-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition-normal);
+}
+
+.why-card:hover .why-icon-wrapper {
+    transform: scale(1.1);
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.why-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.why-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+}
+
+.why-desc {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}

@@ -1,0 +1,72 @@
+.damage-types {
+    position: relative;
+    z-index: 10;
+    background: radial-gradient(circle at center, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+}
+
+.damage-grid {
+    margin-top: 4rem;
+}
+
+.damage-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 2rem;
+    height: 100%;
+}
+
+.damage-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    color: var(--stroke-color);
+    transition: transform var(--transition-normal);
+}
+
+.damage-card:hover .damage-icon-wrapper {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.damage-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.damage-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+}
+
+.damage-desc {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.damage-glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    pointer-events: none;
+}
+
+.damage-card:hover .damage-glow {
+    opacity: 0.15;
+}

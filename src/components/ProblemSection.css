@@ -1,0 +1,101 @@
+.problem-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.problem-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .problem-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+    }
+}
+
+.text-left {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.problem-text-glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Add a subtle highlight to the top edge of the card */
+.problem-text-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+}
+
+.problem-lead {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.problem-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--color-primary);
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+}
+
+.problem-close {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.problem-image-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    /* The shadow layer */
+}
+
+.problem-image-glow {
+    position: absolute;
+    inset: -10px;
+    background: linear-gradient(to bottom right, var(--color-primary), var(--color-accent));
+    filter: blur(20px);
+    opacity: 0.3;
+    border-radius: var(--radius-lg);
+    z-index: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.problem-image-wrapper:hover .problem-image-glow {
+    opacity: 0.5;
+}
+
+.problem-image {
+    position: relative;
+    z-index: 1;
+    border-radius: var(--radius-lg);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+}

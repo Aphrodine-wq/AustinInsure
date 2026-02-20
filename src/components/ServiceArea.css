@@ -1,0 +1,40 @@
+.service-area {
+    position: relative;
+    border-top: 1px solid var(--color-border);
+    background: radial-gradient(circle at bottom center, rgba(15, 23, 42, 0.8) 0%, transparent 70%);
+}
+
+.location-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: 50%;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.location-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.area-tag {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: var(--radius-full) !important;
+    color: var(--color-text-secondary);
+    cursor: default;
+    transition: all var(--transition-fast) !important;
+}
