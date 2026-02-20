@@ -35,7 +35,7 @@ const InsuranceClaims = () => {
                         transition={{ duration: 0.5, delay: 0.1 }}
                     >
                         <div className="claim-icon-wrapper">
-                            <FileText className="w-8 h-8 text-white" />
+                            <FileText className="w-8 h-8 text-primary" />
                         </div>
                         <h4 className="text-xl font-bold text-white mb-3">File an Insurance Claim</h4>
                         <p className="text-slate-300 text-sm leading-relaxed">
@@ -52,7 +52,7 @@ const InsuranceClaims = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         <div className="claim-icon-wrapper">
-                            <ShieldAlert className="w-8 h-8 text-white" />
+                            <ShieldAlert className="w-8 h-8 text-primary" />
                         </div>
                         <h4 className="text-xl font-bold text-white mb-3">Expert Adjuster Meetings</h4>
                         <p className="text-slate-300 text-sm leading-relaxed">
@@ -69,7 +69,7 @@ const InsuranceClaims = () => {
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
                         <div className="claim-icon-wrapper">
-                            <BadgeDollarSign className="w-8 h-8 text-white" />
+                            <BadgeDollarSign className="w-8 h-8 text-primary" />
                         </div>
                         <h4 className="text-xl font-bold text-white mb-3">Zero Out-Of-Pocket Guarantee</h4>
                         <p className="text-slate-300 text-sm leading-relaxed">
@@ -86,7 +86,7 @@ const InsuranceClaims = () => {
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
                         <div className="claim-icon-wrapper">
-                            <HeartHandshake className="w-8 h-8 text-white" />
+                            <HeartHandshake className="w-8 h-8 text-primary" />
                         </div>
                         <h4 className="text-xl font-bold text-white mb-3">Total Restoration</h4>
                         <p className="text-slate-300 text-sm leading-relaxed">
