@@ -79,7 +79,6 @@ const DamageTypes = () => {
                             </div>
                             <h3 className="damage-title">{type.title}</h3>
                             <p className="damage-desc">{type.desc}</p>
-                            <div className="damage-glow" style={{ background: type.color }}></div>
                         </motion.div>
                     ))}
                 </motion.div>

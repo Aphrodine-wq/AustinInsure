@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, MessageCircleQuestion } from 'lucide-react';
+import { ChevronDown, MessageCircleQuestion, ArrowRight } from 'lucide-react';
 import './FAQ.css';
 
-const FAQ = () => {
+const FAQ = ({ onOpenModal }) => {
     const [openIndex, setOpenIndex] = useState(0);
 
     const faqs = [
@@ -88,6 +88,19 @@ const FAQ = () => {
                         </motion.div>
                     ))}
                 </div>
+
+                <motion.div
+                    className="flex justify-center mt-12"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ delay: 0.3 }}
+                >
+                    <button onClick={onOpenModal} className="btn btn-accent btn-lg text-lg">
+                        <span>Claim Your Free Assessment</span>
+                        <ArrowRight className="icon-sm ml-2" />
+                    </button>
+                </motion.div>
             </div>
         </section>
     );

@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import './ProblemSection.css';
 
-const ProblemSection = () => {
+const ProblemSection = ({ onOpenModal }) => {
     return (
-        <section className="section problem-section">
+        <section className="section problem-section section-muted">
             <div className="container problem-inner">
                 <motion.div
                     className="problem-content"
@@ -25,6 +26,13 @@ const ProblemSection = () => {
                         <p className="problem-close">
                             <span className="text-gradient-primary font-semibold">We level the playing field.</span> As licensed Texas contractors who understand the claims process inside and out, we document the damage, negotiate directly with your carrier, and make sure you receive every dollar you're owed so your home gets repaired right.
                         </p>
+
+                        <div className="mt-8">
+                            <button onClick={onOpenModal} className="btn btn-accent w-full sm-auto">
+                                <span>Get Your Free Inspection</span>
+                                <ArrowRight className="icon-sm ml-2" />
+                            </button>
+                        </div>
                     </div>
                 </motion.div>
 
@@ -36,7 +44,6 @@ const ProblemSection = () => {
                     transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
                     whileHover={{ scale: 1.02 }}
                 >
-                    <div className="problem-image-glow"></div>
                     <img
                         src="/images/problem-damage.png"
                         alt="Roof inspection and damage assessment"

@@ -6,94 +6,98 @@ import './Hero.css';
 const Hero = ({ onOpenModal }) => {
     const { scrollY } = useScroll();
     const bgY = useTransform(scrollY, [0, 1000], [0, 300]);
-    const imageY = useTransform(scrollY, [0, 1000], [0, -150]);
+    const imageY = useTransform(scrollY, [0, 1000], [0, -100]);
+    const textY = useTransform(scrollY, [0, 1000], [0, 150]);
+    const opacity = useTransform(scrollY, [0, 500], [1, 0]);
 
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.1
+                staggerChildren: 0.15,
+                delayChildren: 0.2
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 40, scale: 0.95 },
+        hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,
             y: 0,
-            scale: 1,
-            transition: { type: "spring", stiffness: 100, damping: 15 }
+            transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
         }
     };
 
     return (
         <section className="hero">
             <motion.div className="hero-background" style={{ y: bgY }}>
-                <div className="hero-gradient"></div>
-                <div className="hero-grid"></div>
-                <div className="hero-glow"></div>
             </motion.div>
 
-            <div className="container relative hero-container">
+            <div className="hero-container">
                 <motion.div
-                    className="hero-grid-layout"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
+                    className="hero-content"
+                    style={{ y: textY, opacity }}
                 >
-                    <div className="hero-content text-left">
-                        <motion.div variants={itemVariants} className="hero-badge">
-                            <span className="badge-dot"></span>
-                            Trusted in Central Texas
-                        </motion.div>
-
-                        <motion.h1 variants={itemVariants} className="hero-title pt-6">
-                            Don't Let Your Insurance Company <br className="hidden lg:block" />
-                            <span className="text-gradient inline-block mt-2">Underpay Your Claim.</span>
-                        </motion.h1>
-
-                        <motion.p variants={itemVariants} className="hero-subtitle">
-                            We are Austin's trusted storm, water, and fire damage restoration experts. We document the damage, handle the adjuster meetings, and ensure your home is fully repaired without cutting corners.
-                        </motion.p>
-
-                        <motion.div variants={itemVariants} className="hero-ctas">
-                            <button className="btn btn-primary hero-btn" onClick={onOpenModal}>
-                                <span>Start Your Free Claim Assessment</span>
-                                <ArrowRight className="btn-icon" />
-                            </button>
-                            <a href="tel:+15125551234" className="btn btn-secondary hero-btn mt-4 sm:mt-0">
-                                <Phone className="btn-icon" />
-                                <span>(512) 555-1234</span>
-                            </a>
-                        </motion.div>
-
-                        <motion.div variants={itemVariants} className="hero-trust-mini mt-8">
-                            <div className="flex items-center gap-2">
-                                <ShieldCheck className="text-primary icon-sm" />
-                                <span>No out-of-pocket costs for assessment</span>
-                            </div>
-                            <div className="flex items-center gap-2 mt-2 sm:mt-0">
-                                <ShieldCheck className="text-primary icon-sm" />
-                                <span>100% Insurance Compliant Repairs</span>
-                            </div>
-                        </motion.div>
-                    </div>
-
-                    <motion.div
-                        className="hero-image-wrapper hidden md-flex"
-                        variants={itemVariants}
-                        style={{ y: imageY }}
-                    >
-                        <div className="hero-image-glow"></div>
-                        <img
-                            src="/images/hero-home.png"
-                            alt="Luxury Home"
-                            className="hero-featured-image"
-                        />
+                    <motion.div variants={itemVariants} className="hero-badge cursor-default">
+                        <span className="badge-dot"></span>
+                        Premium Central Texas Restoration
                     </motion.div>
+
+                    <motion.h1 variants={itemVariants} className="hero-title">
+                        Don't Let Your Insurer <br className="hidden md:block" />
+                        <span className="text-gradient">Underpay Your Claim.</span>
+                    </motion.h1>
+
+                    <motion.p variants={itemVariants} className="hero-subtitle">
+                        Austin's premier damage restoration experts. We document the loss, handle the adjuster, and rebuild your home beautifully with zero hassle.
+                    </motion.p>
+
+                    <motion.div variants={itemVariants} className="hero-ctas">
+                        <button className="btn btn-primary hero-btn" onClick={onOpenModal}>
+                            <span>File Claim Assessment</span>
+                            <ArrowRight className="btn-icon" />
+                        </button>
+                        <a href="tel:+15125551234" className="btn btn-secondary hero-btn mt-4 sm:mt-0">
+                            <Phone className="icon-sm" />
+                            <span>(512) 555-1234</span>
+                        </a>
+                    </motion.div>
+
+                    <motion.div variants={itemVariants} className="hero-trust-mini mt-8">
+                        <div className="flex items-center gap-2">
+                            <ShieldCheck className="text-accent icon-sm" />
+                            <span>Zero out-of-pocket costs for assessment</span>
+                        </div>
+                        <div className="flex items-center gap-2 mt-2 sm:mt-0">
+                            <ShieldCheck className="text-accent icon-sm" />
+                            <span>100% Insurance Compliant Repairs</span>
+                        </div>
+                    </motion.div>
+                </motion.div>
+
+                <motion.div
+                    className="hero-image-wrapper"
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ y: imageY }}
+                >
+                    <img
+                        src="/images/hero-home.png"
+                        alt="Luxury Home"
+                        className="hero-featured-image"
+                        onError={(e) => {
+                            // Fallback gradient if missing image for premium look
+                            e.target.style.display = 'none';
+                            e.target.parentElement.style.background = 'linear-gradient(135deg, rgba(30,41,59,0.5) 0%, rgba(15,23,42,0.8) 100%)';
+                            e.target.parentElement.style.height = '400px';
+                        }}
+                    />
                 </motion.div>
             </div>
         </section>

@@ -22,34 +22,43 @@ Here is a step-by-step guide on how to build this flow.
 
 You need to modify the form submission handler inside your React components (e.g., `src/components/LeadForm.jsx` and `src/components/IntakeModal.jsx`) so they post data to the Webhook URL you just copied.
 
-### Example Code for `LeadForm.jsx`
+### Example Code for `IntakeModal.jsx` or `LeadForm.jsx`
 
 ```javascript
 const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Gather form data
+    // Example: Gathering form data from IntakeModal
+    // Note: State might hold these values in a real multi-step setup,
+    // but here is the comprehensive payload based on your form fields.
     const formData = {
-        name: e.target.name.value,
-        phone: e.target.phone.value,
-        email: e.target.email.value,
-        damageType: e.target.damageType.value,
-        details: e.target.details.value,
-        source: "Website Lead Form"
+        name: e.target.name?.value || "Unknown",
+        phone: e.target.phone?.value || "Unknown",
+        email: e.target.email?.value || "Unknown",
+        propertyAddress: e.target.address?.value || "Unknown",
+        propertyCity: "Austin",
+        propertyZip: e.target.zip?.value || "Unknown",
+        propertyType: e.target.propertyType?.value || "Single Family",
+        damageType: e.target.damageType?.value || "Unknown",
+        urgency: e.target.urgency?.value || "Unknown",
+        details: e.target.details?.value || "Unknown",
+        claimFiled: e.target.claimFiled?.value || "Not yet",
+        source: "Website Lead Form / Intake Modal"
     };
 
     try {
         // Send data to Zapier Webhook
-        const response = await fetch('YOUR_ZAPIER_WEBHOOK_URL_HERE', {
+        const response = await fetch('https://hooks.zapier.com/hooks/catch/26518372/uck5rhu/', {
             method: 'POST',
             body: JSON.stringify(formData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
 
         if (response.ok) {
-            // Handle success (e.g., show a success message, clear form)
             alert("Thanks! We will contact you shortly.");
         } else {
-            // Handle errors
             console.error("Submission failed");
         }
     } catch (error) {
@@ -57,8 +66,6 @@ const handleSubmit = async (e) => {
     }
 };
 ```
-
-*Don't forget to replace `YOUR_ZAPIER_WEBHOOK_URL_HERE` with the actual URL from Step 1.*
 
 ---
 

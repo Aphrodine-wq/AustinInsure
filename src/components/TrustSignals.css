@@ -1,8 +1,8 @@
 .trust {
-    padding: 4rem 0;
+    padding: 3rem 0;
     position: relative;
     z-index: 10;
-    margin-top: -2rem;
+    margin-top: -3rem;
 }
 
 .trust-inner {
@@ -23,6 +23,7 @@
     .badges {
         flex-direction: row;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 1.5rem;
     }
 }
@@ -31,30 +32,37 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.25rem 1.5rem !important;
+    padding: 1.25rem 1.5rem;
     font-weight: 600;
-    font-size: 1.125rem;
+    font-size: 1.05rem;
+    color: var(--color-text-primary);
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .badge-icon-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(59, 130, 246, 0.15);
+    width: 32px;
+    height: 32px;
+    background: var(--color-bg-surface);
     border-radius: 50%;
     color: var(--color-primary);
 }
 
 .badge-icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 
 .trust-note {
     text-align: center;
     color: var(--color-text-secondary);
-    font-size: 1.125rem;
-    max-width: 600px;
+    font-size: 1.1rem;
+    max-width: 700px;
+    line-height: 1.6;
+    font-weight: 400;
 }

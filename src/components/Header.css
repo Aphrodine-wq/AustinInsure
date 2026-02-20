@@ -4,24 +4,26 @@
     left: 0;
     width: 100%;
     z-index: 100;
-    padding: 1.5rem 0;
     transition: all var(--transition-normal);
+    display: flex;
+    justify-content: center;
     background: transparent;
-}
-
-.site-header.scrolled {
-    padding: 1rem 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border-bottom: 1px solid var(--color-border);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #ffffff;
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 1.5rem;
+    width: 100%;
+    transition: all var(--transition-normal);
+}
+
+.site-header.scrolled .header-inner {
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -30,6 +32,11 @@
     font-weight: 800;
     display: flex;
     align-items: baseline;
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+}
+
+.logo-text {
     color: var(--color-text-primary);
 }
 
@@ -47,12 +54,14 @@
     display: none;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 600;
     color: var(--color-text-secondary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .header-trust {
         display: flex;
     }
@@ -72,50 +81,6 @@
     font-size: 0.875rem;
 }
 
-/* Base utility classes */
-.hidden {
-    display: none !important;
-}
-
-.mr-2 {
-    margin-right: 0.5rem;
-}
-
-.mt-4 {
-    margin-top: 1rem;
-}
-
-.w-full {
-    width: 100%;
-}
-
-.justify-center {
-    justify-content: center;
-}
-
-/* Desktop styles */
-@media (min-width: 640px) {
-    .sm-flex {
-        display: flex !important;
-    }
-}
-
-@media (min-width: 900px) {
-    .md-flex {
-        display: flex !important;
-    }
-
-    .md-hidden {
-        display: none !important;
-    }
-}
-
-@media (min-width: 1024px) {
-    .lg-flex {
-        display: flex !important;
-    }
-}
-
 /* Nav */
 .header-nav {
     display: none;
@@ -126,19 +91,40 @@
 @media (min-width: 900px) {
     .header-nav {
         display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
 .nav-link {
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--color-text-primary);
+    color: var(--color-text-secondary);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+    border-radius: 2px;
 }
 
 .nav-link:hover {
-    color: var(--color-primary);
+    color: var(--color-text-primary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 /* Mobile Menu */
@@ -146,26 +132,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: none;
-    border: none;
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
     cursor: pointer;
     color: var(--color-text-primary);
     padding: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+    background: var(--color-border);
 }
 
 .mobile-menu {
     position: fixed;
-    top: 5rem;
+    top: 4rem;
     left: 0;
     width: 100%;
-    background: white;
+    background: #ffffff;
+    border-bottom: 1px solid var(--color-border);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     z-index: 99;
-    padding: 1rem 0 2rem;
-}
-
-.site-header.scrolled~.mobile-menu {
-    top: 4.5rem;
+    padding: 1.5rem;
 }
 
 .mobile-menu-inner {
@@ -181,6 +170,11 @@
     text-decoration: none;
     padding: 0.75rem 0;
     border-bottom: 1px solid var(--color-border);
+    transition: color 0.2s;
+}
+
+.mobile-nav-link:hover {
+    color: var(--color-primary);
 }
 
 .header-cta {

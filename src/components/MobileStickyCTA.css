@@ -1,0 +1,22 @@
+.mobile-sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .mobile-sticky-cta {
+        display: none;
+        /* Hide on tablets and up where header CTA suffices */
+    }
+}

@@ -6,15 +6,40 @@ import './LeadForm.css';
 const LeadForm = ({ onOpenModal }) => {
     const [status, setStatus] = useState('idle'); // idle, submitting, success
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('submitting');
-        // Simulate network request
-        setTimeout(() => {
-            setStatus('success');
-            e.target.reset();
-            setTimeout(() => setStatus('idle'), 5000);
-        }, 1500);
+
+        // Gather form data
+        const formData = {
+            "Name": e.target.name.value,
+            "Phone": e.target.phone.value,
+            "Email": e.target.email.value,
+            "Property Address": e.target.address.value,
+            "Damage Type": e.target.damage_type.value,
+            "Insurance Carrier": e.target.insurance_carrier.value,
+            "Details": e.target.description.value,
+            "Source": "Website Lead Form"
+        };
+
+        try {
+            const response = await fetch('https://hooks.zapier.com/hooks/catch/26518372/uck5rhu/', {
+                method: 'POST',
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                e.target.reset();
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                console.error("Submission failed");
+                setStatus('idle');
+            }
+        } catch (error) {
+            console.error("Error submitting to Zapier:", error);
+            setStatus('idle');
+        }
     };
 
     return (

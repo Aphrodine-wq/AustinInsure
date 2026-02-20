@@ -1,24 +1,26 @@
 .service-area {
     position: relative;
+    padding: 6rem 0;
     border-top: 1px solid var(--color-border);
-    background: radial-gradient(circle at bottom center, rgba(15, 23, 42, 0.8) 0%, transparent 70%);
+    background: #ffffff;
 }
 
 .location-icon-wrapper {
-    width: 60px;
-    height: 60px;
-    background: rgba(245, 158, 11, 0.1);
+    width: 64px;
+    height: 64px;
+    background: var(--color-bg-surface);
     border-radius: 50%;
-    border: 1px solid rgba(245, 158, 11, 0.2);
+    border: 1px solid var(--color-border);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
+    color: var(--color-primary);
 }
 
 .location-icon {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
 }
 
 .area-tags {
@@ -26,15 +28,29 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .area-tag {
-    padding: 0.75rem 1.5rem !important;
-    font-size: 1rem;
-    font-weight: 500;
+    padding: 0.85rem 1.75rem !important;
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-family: var(--font-display);
     border-radius: var(--radius-full) !important;
     color: var(--color-text-secondary);
+    background: #ffffff !important;
+    border: 1px solid var(--color-border) !important;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.05);
     cursor: default;
     transition: all var(--transition-fast) !important;
+}
+
+.area-tag:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1) !important;
+    transform: translateY(-2px);
 }

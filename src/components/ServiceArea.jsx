@@ -5,9 +5,9 @@ import './ServiceArea.css';
 
 const ServiceArea = () => {
     const areas = [
-        "Austin", "Round Rock", "Cedar Park", "Pflugerville",
+        "Austin, TX", "Round Rock", "Cedar Park", "Pflugerville",
         "Georgetown", "Leander", "Kyle", "Buda",
-        "Lakeway", "Dripping Springs", "Manor", "Hutto", "Surrounding areas"
+        "Lakeway", "Dripping Springs", "Manor", "Hutto", "Central Texas"
     ];
 
     const containerVariants = {
@@ -37,9 +37,9 @@ const ServiceArea = () => {
                             <MapPin className="location-icon text-accent" />
                         </div>
                     </div>
-                    <h2 className="section-title">Serving Greater Austin</h2>
-                    <p className="section-subtitle">
-                        We work throughout Central Texas. If you're in or near any of these areas, we can help right away.
+                    <h2 className="section-title">Austin's Premier Roofing & Restoration Experts</h2>
+                    <p className="section-subtitle text-lg">
+                        Providing top-tier storm damage repair, roof replacement, and water restoration services across Greater Austin. If your home has been affected by severe weather, our local experts are ready to dispatch immediately.
                     </p>
                 </motion.div>
 
@@ -53,9 +53,9 @@ const ServiceArea = () => {
                     {areas.map((area, index) => (
                         <motion.span
                             key={index}
-                            className="area-tag glass-card"
+                            className="area-tag glass-card font-medium"
                             variants={tagVariants}
-                            whileHover={{ scale: 1.05, borderColor: "rgba(59, 130, 246, 0.5)", color: "white" }}
+                            whileHover={{ scale: 1.05, borderColor: "rgba(59, 130, 246, 0.5)", color: "var(--color-text-primary)" }}
                         >
                             {area}
                         </motion.span>

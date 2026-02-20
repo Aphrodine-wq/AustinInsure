@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Map, HandCoins, Users } from 'lucide-react';
+import { ShieldCheck, Map, HandCoins, Users, ArrowRight } from 'lucide-react';
 import './WhyUs.css';
 
-const WhyUs = () => {
+const WhyUs = ({ onOpenModal }) => {
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -41,7 +41,7 @@ const WhyUs = () => {
     ];
 
     return (
-        <section id="why-us" className="section why-us">
+        <section id="why-us" className="section why-us section-dark">
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -76,6 +76,19 @@ const WhyUs = () => {
                             <p className="why-desc">{reason.desc}</p>
                         </motion.div>
                     ))}
+                </motion.div>
+
+                <motion.div
+                    className="flex justify-center mt-12"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ delay: 0.4 }}
+                >
+                    <button onClick={onOpenModal} className="btn btn-accent btn-lg text-lg">
+                        <span>Start My Free Assessment</span>
+                        <ArrowRight className="icon-sm ml-2" />
+                    </button>
                 </motion.div>
             </div>
         </section>
