@@ -12,7 +12,7 @@ const Footer = () => {
                     Licensed & bonded. Roof, storm, water, and fire damage claims and repair across Central Texas.
                 </p>
                 <p className="footer-contact">
-                    <a href="tel:+15125551234">(512) 555-1234</a> · Austin & greater Central Texas
+                    <a href="tel:+15123633576">512 - 363 - 3576</a> · Austin & greater Central Texas
                 </p>
                 <p className="footer-copy">© {year} Austin Insure. All rights reserved.</p>
             </div>

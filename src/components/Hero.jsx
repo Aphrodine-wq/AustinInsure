@@ -62,9 +62,9 @@ const Hero = ({ onOpenModal }) => {
                             <span>File Claim Assessment</span>
                             <ArrowRight className="btn-icon" />
                         </button>
-                        <a href="tel:+15125551234" className="btn btn-secondary hero-btn mt-4 sm:mt-0">
+                        <a href="tel:+15123633576" className="btn btn-secondary hero-btn mt-4 sm:mt-0">
                             <Phone className="icon-sm" />
-                            <span>(512) 555-1234</span>
+                            <span>512 - 363 - 3576</span>
                         </a>
                     </motion.div>
 

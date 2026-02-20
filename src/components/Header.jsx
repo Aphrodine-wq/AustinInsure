@@ -50,9 +50,9 @@ const Header = () => {
                             <ShieldCheck className="icon-sm text-accent" />
                             <span className="trust-text">Licensed & Bonded</span>
                         </span>
-                        <a href="tel:+15125551234" className="btn btn-accent btn-sm header-cta sm-flex">
+                        <a href="tel:+15123633576" className="btn btn-accent btn-sm header-cta sm-flex">
                             <Phone className="icon-sm mr-2" />
-                            <span>(512) 555-1234</span>
+                            <span>512 - 363 - 3576</span>
                         </a>
                         <button className="mobile-menu-btn md-hidden" onClick={toggleMenu} aria-label="Toggle menu">
                             {mobileMenuOpen ? <X /> : <Menu />}
@@ -85,14 +85,14 @@ const Header = () => {
                                 </motion.a>
                             ))}
                             <motion.a
-                                href="tel:+15125551234"
+                                href="tel:+15123633576"
                                 className="btn btn-accent w-full mt-4 justify-center"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4 }}
                             >
                                 <Phone className="icon-sm mr-2" />
-                                (512) 555-1234
+                                512 - 363 - 3576
                             </motion.a>
                         </div>
                     </motion.div>
