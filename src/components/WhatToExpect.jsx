@@ -41,7 +41,7 @@ const WhatToExpect = ({ onOpenModal }) => {
     };
 
     return (
-        <section className="section expect">
+        <section id="process" className="section expect">
             <div className="container expect-inner">
                 <div className="expect-content">
                     <motion.h2
@@ -105,11 +105,11 @@ const WhatToExpect = ({ onOpenModal }) => {
                     transition={{ duration: 0.8 }}
                 >
                     <div className="gallery-main">
-                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="House exterior with roof" />
+                        <img src="/images/process-inspection.png" alt="House exterior with roof" />
                     </div>
                     <div className="gallery-side">
-                        <img src="https://images.unsplash.com/photo-1632778144955-d4e90bb2d2c9?w=600&q=80" alt="Roof and construction" />
-                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt="Home repair and restoration" />
+                        <img src="/images/process-crew.png" alt="Roof and construction" />
+                        <img src="/images/process-restored.png" alt="Home repair and restoration" />
                     </div>
                 </motion.div>
             </div>

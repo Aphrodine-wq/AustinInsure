@@ -30,7 +30,7 @@ const FAQ = () => {
     ];
 
     return (
-        <section className="section faq-section">
+        <section id="faq" className="section faq-section">
             <div className="container container-narrow">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

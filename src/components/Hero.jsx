@@ -89,7 +89,7 @@ const Hero = ({ onOpenModal }) => {
                     >
                         <div className="hero-image-glow"></div>
                         <img
-                            src="https://images.unsplash.com/photo-1600607688969-a5bfcd64bdfc?w=800&q=80"
+                            src="/images/hero-home.png"
                             alt="Luxury Home"
                             className="hero-featured-image"
                         />

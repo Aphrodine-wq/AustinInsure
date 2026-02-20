@@ -41,7 +41,7 @@ const WhyUs = () => {
     ];
 
     return (
-        <section className="section why-us">
+        <section id="why-us" className="section why-us">
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

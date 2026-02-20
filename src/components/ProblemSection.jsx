@@ -38,7 +38,7 @@ const ProblemSection = () => {
                 >
                     <div className="problem-image-glow"></div>
                     <img
-                        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+                        src="/images/problem-damage.png"
                         alt="Roof inspection and damage assessment"
                         className="problem-image"
                         loading="lazy"

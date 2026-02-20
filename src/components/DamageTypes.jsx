@@ -45,7 +45,7 @@ const DamageTypes = () => {
     ];
 
     return (
-        <section className="section damage-types">
+        <section id="services" className="section damage-types">
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
