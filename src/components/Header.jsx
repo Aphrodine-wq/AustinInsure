@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ShieldCheck, Phone, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import './Header.css';
@@ -7,6 +8,8 @@ const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { scrollY } = useScroll();
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
 
     useEffect(() => {
         return scrollY.onChange((latest) => {
@@ -14,11 +17,17 @@ const Header = () => {
         });
     }, [scrollY]);
 
+    // Close mobile menu on route change
+    useEffect(() => {
+        setMobileMenuOpen(false);
+    }, [location.pathname]);
+
     const navLinks = [
-        { name: 'Services', href: '#services' },
-        { name: 'Process', href: '#process' },
-        { name: 'Why Us', href: '#why-us' },
-        { name: 'FAQ', href: '#faq' }
+        { name: 'Services', href: isHomePage ? '#services' : '/#services', isHash: true },
+        { name: 'Process', href: isHomePage ? '#process' : '/#process', isHash: true },
+        { name: 'Why Us', href: isHomePage ? '#why-us' : '/#why-us', isHash: true },
+        { name: 'FAQ', href: isHomePage ? '#faq' : '/#faq', isHash: true },
+        { name: 'Blog', href: '/blog', isHash: false }
     ];
 
     const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
@@ -32,16 +41,26 @@ const Header = () => {
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
                 <div className="header-inner">
-                    <a href="#" className="logo">
+                    <Link to="/" className="logo">
                         <span className="logo-text">Austin Insure</span>
                         <span className="logo-dot">.</span>
-                    </a>
+                    </Link>
 
-                    <nav className="header-nav md-flex">
+                    <nav className="header-nav md-flex" aria-label="Main navigation">
                         {navLinks.map((link) => (
-                            <a key={link.name} href={link.href} className="nav-link">
-                                {link.name}
-                            </a>
+                            link.isHash ? (
+                                <a key={link.name} href={link.href} className="nav-link">
+                                    {link.name}
+                                </a>
+                            ) : (
+                                <Link
+                                    key={link.name}
+                                    to={link.href}
+                                    className={`nav-link ${location.pathname.startsWith(link.href) ? 'nav-link-active' : ''}`}
+                                >
+                                    {link.name}
+                                </Link>
+                            )
                         ))}
                     </nav>
 
@@ -72,24 +91,41 @@ const Header = () => {
                     >
                         <div className="mobile-menu-inner">
                             {navLinks.map((link, i) => (
-                                <motion.a
-                                    key={link.name}
-                                    href={link.href}
-                                    className="mobile-nav-link"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    initial={{ x: -20, opacity: 0 }}
-                                    animate={{ x: 0, opacity: 1 }}
-                                    transition={{ delay: i * 0.1 }}
-                                >
-                                    {link.name}
-                                </motion.a>
+                                link.isHash ? (
+                                    <motion.a
+                                        key={link.name}
+                                        href={link.href}
+                                        className="mobile-nav-link"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        initial={{ x: -20, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        transition={{ delay: i * 0.1 }}
+                                    >
+                                        {link.name}
+                                    </motion.a>
+                                ) : (
+                                    <motion.div
+                                        key={link.name}
+                                        initial={{ x: -20, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        transition={{ delay: i * 0.1 }}
+                                    >
+                                        <Link
+                                            to={link.href}
+                                            className="mobile-nav-link"
+                                            onClick={() => setMobileMenuOpen(false)}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </motion.div>
+                                )
                             ))}
                             <motion.a
                                 href="tel:+15123633576"
                                 className="btn btn-accent w-full mt-4 justify-center"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                transition={{ delay: 0.4 }}
+                                transition={{ delay: 0.5 }}
                             >
                                 <Phone className="icon-sm mr-2" />
                                 512 - 363 - 3576

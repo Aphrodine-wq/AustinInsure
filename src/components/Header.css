@@ -127,6 +127,14 @@
     width: 100%;
 }
 
+.nav-link-active {
+    color: var(--color-primary);
+}
+
+.nav-link-active::after {
+    width: 100%;
+}
+
 /* Mobile Menu */
 .mobile-menu-btn {
     display: flex;
