@@ -23,11 +23,11 @@ const Header = () => {
     }, [location.pathname]);
 
     const navLinks = [
-        { name: 'Services', href: isHomePage ? '#services' : '/#services', isHash: true },
-        { name: 'Process', href: isHomePage ? '#process' : '/#process', isHash: true },
-        { name: 'Why Us', href: isHomePage ? '#why-us' : '/#why-us', isHash: true },
-        { name: 'FAQ', href: isHomePage ? '#faq' : '/#faq', isHash: true },
-        { name: 'Blog', href: '/blog', isHash: false }
+        { name: 'Services', href: '/services', isHash: false },
+        { name: 'About', href: '/about', isHash: false },
+        { name: 'Service Area', href: '/service-area', isHash: false },
+        { name: 'Blog', href: '/blog', isHash: false },
+        { name: 'Contact', href: '/contact', isHash: false }
     ];
 
     const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);

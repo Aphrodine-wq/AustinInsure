@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
     <loc>https://www.austininsure.com/</loc>
     <lastmod>2026-02-21</lastmod>
@@ -7,13 +8,51 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.austininsure.com/services</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.austininsure.com/about</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.austininsure.com/contact</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.austininsure.com/service-area</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.austininsure.com/blog</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.austininsure.com/blog/roof-replacement-round-rock-tx-guide</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.austininsure.com/blog/hail-damage-austin-how-to-spot-what-to-do</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.austininsure.com/blog/storm-damage-cedar-park-pflugerville</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -25,7 +64,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.austininsure.com/blog/best-roofing-contractors-georgetown-tx</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.austininsure.com/blog/5-things-insurance-company-wont-tell-you-storm-damage</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.austininsure.com/blog/insurance-claim-tips-lakeway-bee-cave</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -33,6 +84,12 @@
   <url>
     <loc>https://www.austininsure.com/blog/denied-insurance-claim-rights-next-steps-texas</loc>
     <lastmod>2026-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.austininsure.com/blog/wind-damage-leander-liberty-hill</loc>
+    <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -49,14 +106,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.austininsure.com/blog/foundation-water-damage-kyle-buda-tx</loc>
+    <lastmod>2026-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.austininsure.com/blog/insurance-claim-supplement-get-more-money</loc>
     <lastmod>2026-02-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.austininsure.com/blog/how-long-does-roof-insurance-claim-take-texas</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.austininsure.com/blog/how-to-document-roof-damage-successful-insurance-claim</loc>
     <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.austininsure.com/blog/emergency-roof-tarp-service-austin-tx</loc>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

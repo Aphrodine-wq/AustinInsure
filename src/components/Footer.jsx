@@ -25,23 +25,23 @@ const Footer = () => {
                 <div className="footer-col">
                     <h4 className="footer-col-heading">Services</h4>
                     <nav className="footer-col-links" aria-label="Services">
-                        <a href="/#services">Roof Damage Claims</a>
-                        <a href="/#services">Water Damage Restoration</a>
-                        <a href="/#services">Storm & Hail Damage</a>
-                        <a href="/#services">Fire & Smoke Damage</a>
-                        <a href="/#services">Insurance Claim Management</a>
-                        <a href="/#services">Emergency Board-Up</a>
+                        <Link to="/services">All Services</Link>
+                        <Link to="/services">Roof Damage Claims</Link>
+                        <Link to="/services">Water Damage Restoration</Link>
+                        <Link to="/services">Storm & Hail Damage</Link>
+                        <Link to="/services">Fire & Smoke Damage</Link>
+                        <Link to="/services">Insurance Claim Management</Link>
                     </nav>
                 </div>
 
                 {/* Resources Column */}
                 <div className="footer-col">
-                    <h4 className="footer-col-heading">Resources</h4>
-                    <nav className="footer-col-links" aria-label="Resources">
+                    <h4 className="footer-col-heading">Company</h4>
+                    <nav className="footer-col-links" aria-label="Company">
+                        <Link to="/about">About Us</Link>
+                        <Link to="/service-area">Service Area</Link>
                         <Link to="/blog">Blog & Guides</Link>
-                        <a href="/#faq">FAQ</a>
-                        <a href="/#process">Our Process</a>
-                        <a href="/#why-us">Why Choose Us</a>
+                        <Link to="/contact">Contact Us</Link>
                         <Link to="/blog/complete-guide-filing-roof-insurance-claim-texas">Filing a Claim Guide</Link>
                         <Link to="/blog/denied-insurance-claim-rights-next-steps-texas">Denied Claim Help</Link>
                     </nav>

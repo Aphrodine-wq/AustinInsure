@@ -44,7 +44,7 @@
       "@id": "https://www.austininsure.com/",
       "url": "https://www.austininsure.com/",
       "telephone": "+15123633576",
-      "description": "Austin's premier insurance claim and damage restoration experts. We handle roof, storm, water, and fire damage claims — inspection through rebuild — with zero out-of-pocket costs.",
+      "description": "Austin's premier insurance claim and damage restoration experts. We handle roof, storm, water, and fire damage claims — inspection through rebuild — with zero out-of-pocket costs. Serving Austin, Round Rock, Cedar Park, Georgetown, and all of Central Texas.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "100 Congress Ave",
@@ -74,12 +74,46 @@
       "areaServed": [
         "Austin", "Round Rock", "Cedar Park", "Georgetown", "Pflugerville",
         "Lakeway", "Leander", "Dripping Springs", "Kyle", "Buda",
-        "San Marcos", "Hutto", "Manor", "Bee Cave", "Westlake Hills"
+        "San Marcos", "Hutto", "Manor", "Bee Cave", "Westlake Hills",
+        "Liberty Hill", "Bastrop", "Taylor", "Elgin", "Lago Vista",
+        "Jonestown", "Marble Falls", "Rollingwood", "Sunset Valley",
+        "Wimberley", "Lockhart", "Smithville", "Jarrell", "Salado"
       ],
       "priceRange": "$$",
       "sameAs": []
     }
     </script>
+
+  <!-- JSON-LD WebSite Schema (enables sitelinks search box) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Austin Insure",
+      "url": "https://www.austininsure.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.austininsure.com/blog?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+  <!-- JSON-LD SiteNavigationElement Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": ["Services", "About", "Service Area", "Blog", "Contact"],
+      "url": [
+        "https://www.austininsure.com/services",
+        "https://www.austininsure.com/about",
+        "https://www.austininsure.com/service-area",
+        "https://www.austininsure.com/blog",
+        "https://www.austininsure.com/contact"
+      ]
+    }
+  </script>
 </head>
 
 <body>

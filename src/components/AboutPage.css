@@ -1,0 +1,138 @@
+.about-page {
+    padding-top: 80px;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3a5c 100%);
+    padding: 4rem 0 3rem;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.about-story h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-primary);
+}
+
+.about-story p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.about-values h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.value-card {
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.value-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin: 0 auto 1rem;
+}
+
+.value-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.value-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.about-commitment h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.commitment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.commitment-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.05rem;
+    color: var(--color-text-primary);
+    text-align: left;
+}
+
+.about-cta {
+    padding: 4rem 0;
+    background: var(--color-bg-secondary);
+}
+
+.about-cta h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.about-cta p {
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.about-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@media (max-width: 500px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}

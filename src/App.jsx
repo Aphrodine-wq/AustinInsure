@@ -15,12 +15,16 @@ const BlogPreview = lazy(() => import('./components/BlogPreview'));
 const ServiceArea = lazy(() => import('./components/ServiceArea'));
 const ProjectGallery = lazy(() => import('./components/ProjectGallery'));
 const FAQ = lazy(() => import('./components/FAQ'));
-const LeadForm = lazy(() => import('./components/LeadForm'));
+const FinalCTA = lazy(() => import('./components/FinalCTA'));
 const Footer = lazy(() => import('./components/Footer'));
 const IntakeModal = lazy(() => import('./components/IntakeModal'));
 const MobileStickyCTA = lazy(() => import('./components/MobileStickyCTA'));
 const BlogList = lazy(() => import('./components/BlogList'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
+const ServicesPage = lazy(() => import('./components/ServicesPage'));
+const AboutPage = lazy(() => import('./components/AboutPage'));
+const ContactPage = lazy(() => import('./components/ContactPage'));
+const ServiceAreaPage = lazy(() => import('./components/ServiceAreaPage'));
 
 function HomePage({ openModal }) {
   const renderLoader = () => (
@@ -75,9 +79,7 @@ function HomePage({ openModal }) {
             <FAQ onOpenModal={openModal} />
           </section>
 
-          <section className="bg-slate">
-            <LeadForm onOpenModal={openModal} />
-          </section>
+          <FinalCTA onOpenModal={openModal} />
         </Suspense>
       </main>
     </>
@@ -103,6 +105,10 @@ function App() {
       <Suspense fallback={renderLoader()}>
         <Routes>
           <Route path="/" element={<HomePage openModal={openModal} />} />
+          <Route path="/services" element={<ServicesPage onOpenModal={openModal} />} />
+          <Route path="/about" element={<AboutPage onOpenModal={openModal} />} />
+          <Route path="/contact" element={<ContactPage onOpenModal={openModal} />} />
+          <Route path="/service-area" element={<ServiceAreaPage onOpenModal={openModal} />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
