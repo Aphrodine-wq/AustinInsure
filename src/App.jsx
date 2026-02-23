@@ -1,5 +1,6 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import InsuranceClaims from './components/InsuranceClaims';
@@ -119,6 +120,7 @@ function App() {
         <IntakeModal isOpen={isModalOpen} onClose={closeModal} />
         <MobileStickyCTA onOpenModal={openModal} />
       </Suspense>
+      <Analytics />
     </div>
   );
 }
